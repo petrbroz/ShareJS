@@ -1036,6 +1036,8 @@
 
         if (socketImpl === 'sockjs' || socketImpl === 'websocket') {
           msg = JSON.parse(msg.data);
+        } else if (socketImpl === 'channel') {
+          msg = msg.data;
         }
         if (msg.auth === null) {
           _this.lastError = msg.error;
